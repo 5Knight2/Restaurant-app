@@ -1,10 +1,12 @@
-import React from "react"
+import React,{useContext} from "react"
 import classes from "./HeaderCartButton.module.css"
 import CartIcon from "../Cart/CartIcon"
-
+import cartContext from "../../Store/Cart-Context"
 
 const HeaderCartButton=(props)=>{
-let count=0;
+const ctx=useContext(cartContext);
+let count=ctx.items.reduce((count,c)=>{return c.amount+count},0)
+
     return(
         <React.Fragment>
             <button className={classes.button} onClick={props.onClick}>
