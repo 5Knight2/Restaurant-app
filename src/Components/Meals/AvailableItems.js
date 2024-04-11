@@ -7,7 +7,7 @@ const Items=[{id:1,name:"Paneer Tikka Masala", description:"Roasted panneer tikk
 },{id:2,name:"Paneer Masala", description:"Roasted panneer fried in masala(indian curry)",price:400}]
 const AvailableItems=()=>{
 
-   const list= Items.map((c)=>{return (<MealItem key={c.id} name={c.name} description={c.description} price={c.price}></MealItem>
+   const list= Items.map((c)=>{return (<MealItem key={c.id} id={c.id} name={c.name} description={c.description} price={c.price}></MealItem>
  )})
 
    return (<div className={classes.meals}>

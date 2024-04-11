@@ -1,8 +1,10 @@
 
 import classes from './MealItem.module.css'
-import React from 'react'
+import React, { useContext } from 'react'
 import MealForm from "./MealForm"
+
 const MealItem=(props)=>{
+ 
     return(
         
             <li key={props.id} className={classes.meal}>
@@ -12,7 +14,7 @@ const MealItem=(props)=>{
             <div className={classes.price}>{"₹"+props.price.toFixed(2)}</div>
             </div>
             <div>
-            <MealForm></MealForm>
+            <MealForm item={props}></MealForm>
             </div>
             </li>
             

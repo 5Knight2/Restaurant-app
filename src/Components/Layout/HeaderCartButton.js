@@ -5,7 +5,7 @@ import cartContext from "../../Store/Cart-Context"
 
 const HeaderCartButton=(props)=>{
 const ctx=useContext(cartContext);
-let count=ctx.items.reduce((count,c)=>{return c.amount+count},0)
+let count=ctx.items.length;
 
     return(
         <React.Fragment>
