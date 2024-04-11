@@ -44,3 +44,36 @@
     background-color: #8a2b06;
     color: white;
   }
+
+  .price {
+    margin-top: 0.25rem;
+    font-weight: bold;
+    color: #ad5502;
+    font-size: 1.25rem;
+  }
+
+  .badge {
+    background-color: #b94517;
+    padding: 0.25rem 1rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+    font-weight: bold;
+    color: black;
+  }
+
+  .button--count {
+    font: inherit;
+    cursor: pointer;
+    background-color: #8a2b06;
+    border: 1px solid #8a2b06;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 30px;
+  }
+  
+   .button--count:hover,
+   .button--count:active {
+    background-color: #641e03;
+    border-color: #641e03;
+  }

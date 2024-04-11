@@ -5,8 +5,27 @@ import cartContext from "../../Store/Cart-Context"
 
 const Cart=(props)=>{
     let ctx=useContext(cartContext);
+
+    const decreseAmount=(e)=>{
+        ctx.removeItem(e.target.id)
+    }
+    const increaseAmount=(e)=>{
+        console.log(e)
+    }
+
     let  cartItems=ctx.items;
-        cartItems=cartItems.map((c)=>{return(<li key={c.id}>{c.name}"----"{c.amount}</li>)})
+        cartItems=cartItems.map((c)=>{return(
+        <li key={c.id} >{c.name}"
+        <div >
+        <div className={classes.price}>{"₹"+c.price.toFixed(2)} </div>
+       
+       
+        <span className={classes.badge}>x{c.amount}</span> 
+        <button id={c.id} className={classes["button--count"]} onClick={decreseAmount} >-</button>
+        <button id={c.id} className={classes["button--count"]} onClick={increaseAmount}>+</button>
+        
+        </div>
+        </li>)})
 console.log(ctx.totalAmount)
         
     return(

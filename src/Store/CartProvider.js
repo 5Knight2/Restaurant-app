@@ -25,7 +25,10 @@ const CartProvider=(props)=>{
 console.log(cartContext.totalAmount)
     }
     const removeItemFromCartHandler=(id)=>{
-        
+        setItems((prevState)=>{
+           return prevState.map((c)=>{if( c.id==id && c.amount>0)c.amount=c.amount-1
+        return c})
+        })
     }
 
     const cartContext={
