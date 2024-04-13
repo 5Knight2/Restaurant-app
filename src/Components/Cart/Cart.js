@@ -10,7 +10,7 @@ const Cart=(props)=>{
         ctx.removeItem(e.target.id)
     }
     const increaseAmount=(e)=>{
-        console.log(e)
+        ctx.addItem({id:e.target.id,amount:1})
     }
 
     let  cartItems=ctx.items;

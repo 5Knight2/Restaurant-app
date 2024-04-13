@@ -14,19 +14,28 @@ const CartProvider=(props)=>{
                 flag=true;
                 if(c.amount==undefined)
                 c={...c,amount:1}
-
+                setTotalAmount((amount)=>{
+                    return (amount+c.price*item.amount)})
+                   
              c.amount=c.amount+item.amount;}
              return c;
         })
         if(flag==true)return [...prevState]
         else
-            return [...prevState,item]})
-        setTotalAmount((amount)=>{return amount+item.price})
-console.log(cartContext.totalAmount)
+            {
+                setTotalAmount((amount)=>{
+                    
+                    return (amount+item.price*item.amount)})
+                return [...prevState,item]
+            
+            }})
+        
+
     }
     const removeItemFromCartHandler=(id)=>{
         setItems((prevState)=>{
-           return prevState.map((c)=>{if( c.id==id && c.amount>0)c.amount=c.amount-1
+           return prevState.map((c)=>{if( c.id==id && c.amount>0){c.amount=c.amount-1
+            setTotalAmount((amount)=>{return amount-c.price})}
         return c})
         })
     }
